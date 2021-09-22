@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Выбираем DrawerLayout -->
+<!-- tools:openDrawer="start" - позволяет видеть выдвинутый NavView (В приложении не работает) -->
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:openDrawer="start"
+    tools:context=".MainActivity" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Open" />
+
+    </LinearLayout>
+
+    <!-- Виджет NavigationView -->
+    <!-- android:layout_gravity="start" - указывает что вью будет вылазить слева -->
+    <!-- app:headerLayout="@layout/header" - Прикрепляем наш Хеадер -->
+    <!-- app:menu="@menu/nav_menu" - Прикрепляем нашу Меню -->
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/nv"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:background="@android:color/holo_orange_dark"
+        app:headerLayout="@layout/header"
+        app:menu="@menu/nav_menu" />
+
+</androidx.drawerlayout.widget.DrawerLayout>
